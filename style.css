@@ -1,0 +1,158 @@
+:root{
+    --bg: #fcfaf9;
+    --header: #f5dce4;
+    --today: #e9bcc8;
+
+    --text: #4e4747;
+    --muted: #d7d1d1;
+    --border: #f0eaea;
+
+    --header-text: #7a6269;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 0.5vw;
+
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* =====================================
+   RESPONSIVE CALENDAR
+   Resizes automatically with Notion
+   ===================================== */
+
+.calendar{
+    width: 100%;
+
+    background: var(--bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 0.8vw;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 0 1px rgba(0,0,0,.02);
+}
+
+/* Header */
+
+.header{
+    height: clamp(22px, 5vw, 50px);
+
+    background: var(--header);
+
+    color: var(--header-text);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4%;
+
+    font-size: clamp(8px, 2vw, 18px);
+    font-weight: 700;
+
+    letter-spacing: .04em;
+}
+
+.header button{
+    border: none;
+    background: none;
+
+    color: var(--header-text);
+
+    cursor: pointer;
+
+    width: 1.5em;
+
+    font-size: 1.2em;
+
+    transition: opacity .15s ease;
+}
+
+.header button:hover{
+    opacity: .6;
+}
+
+/* Weekdays */
+
+.weekdays{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    padding-top: 1.5%;
+
+    text-align: center;
+
+    color: #7f7676;
+
+    font-size: clamp(7px, 1.8vw, 16px);
+    font-weight: 700;
+
+    letter-spacing: .02em;
+}
+
+/* Calendar grid */
+
+#days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    padding: 2%;
+}
+
+.day{
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: clamp(8px, 2vw, 18px);
+
+    color: var(--text);
+
+    transition: all .15s ease;
+}
+
+.inactive{
+    color: var(--muted);
+}
+
+/* Today */
+
+.today{
+    width: 70%;
+    height: 70%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--today);
+
+    color: white;
+
+    border-radius: 20%;
+
+    font-weight: 700;
+}
